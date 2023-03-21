@@ -1,0 +1,42 @@
+components:
+- name: github.com/sidhishruti22/mapping-que
+  version: "v1.0.1"
+  provider:
+    name: ammar
+  resources:
+    - name: db-image
+      type: ociImage
+      version: "v1.0.0"
+      access:
+        type: ociArtifact
+        imageReference: docker.io/ammar31/database-app:1.0.0
+    - name: app-image
+      type: ociImage
+      version: "v1.0.0"
+      access:
+        type: ociArtifact
+        imageReference: docker.io/ammar31/python-django-2.3
+    - name: db-deployment
+      type: PlainText
+      input:
+        type: dir
+        path: "db-manifests"
+        compress: true
+    - name: app-deployment
+      type: PlainText
+      input:
+        type: dir
+        path: "app-manifests"
+        compress: true        
+    - name: db-config
+      type: PlainText
+      input:
+        type: file
+        path: "db-config.yaml"
+        compress: true
+    - name: app-config
+      type: PlainText
+      input:
+        type: file
+        path: "app-config.yaml"
+        compress: true

@@ -1,0 +1,10 @@
+apiVersion: config.ocm.software/v1alpha1
+kind: ConfigData
+metadata:
+  name: app-config
+localization:
+  - name: app-image
+    file: app-deployment.yaml
+    image: spec.template.spec.containers[0].image
+    resource:
+      name: app-image 
