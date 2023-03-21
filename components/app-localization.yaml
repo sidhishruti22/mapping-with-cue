@@ -1,0 +1,22 @@
+apiVersion: delivery.ocm.software/v1alpha1
+kind: Localization
+metadata:
+  name: app
+  namespace: ocm-system
+spec:
+  interval: 1m0s
+  componentVersionRef:
+    name: mapping-with-que
+    namespace: ocm-system
+  source:
+    sourceRef:
+      kind: Snapshot
+      name: app-deployment-snap
+      namespace: ocm-system
+  configRef:
+    resource:
+      resourceRef:
+        name: app-config
+  snapshotTemplate:
+    name: app-deployment-localized
+    createFluxSource: true
