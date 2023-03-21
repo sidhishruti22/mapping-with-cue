@@ -6,7 +6,7 @@ metadata:
 spec:
   interval: 10m0s
   componentVersionRef:
-    name: que
+    name: mapping-with-que
     namespace: ocm-system
   resource:
     name: app-deployment
