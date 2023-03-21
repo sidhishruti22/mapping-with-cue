@@ -2,7 +2,7 @@ components:
 - name: github.com/sidhishruti22/mapping-que
   version: "v1.0.1"
   provider:
-    name: ammar
+    name: sidhishruti22
   resources:
     - name: db-image
       type: ociImage
